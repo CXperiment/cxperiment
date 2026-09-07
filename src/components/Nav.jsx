@@ -44,6 +44,9 @@ const Nav = () => {
   }, [contactoRef, serviciosRef, sobremiRef])
 
   const handleRefService = () => {
+        if (window.gtag) {
+      window.gtag('event', 'ver_servicios')
+    }
     const refServiciosRef = serviciosRef.current
     const serviciosRefRect = refServiciosRef.getBoundingClientRect()
     const offset = isOpem && window.innerWidth < 768 ? 330 : 150
